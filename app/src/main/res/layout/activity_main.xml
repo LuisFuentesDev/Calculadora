@@ -7,34 +7,22 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="85dp"
-        android:text="@string/calculadora1"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/numero1"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/n_mero_1"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:ignore="LabelFor,TextContrastCheck" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/numero2"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginTop="44dp"
@@ -45,48 +33,70 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+        app:layout_constraintTop_toBottomOf="@+id/numero1"
         tools:ignore="LabelFor,TextContrastCheck" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonSumar"
         android:layout_width="120dp"
         android:layout_height="48dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="44dp"
         android:text="@string/sumar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
+        app:layout_constraintEnd_toEndOf="@+id/numero2"
+        app:layout_constraintStart_toStartOf="@+id/numero2"
+        app:layout_constraintTop_toBottomOf="@+id/numero2" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonRestar"
         android:layout_width="120dp"
         android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:text="@string/restar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="@+id/buttonMultiplicar"
+        app:layout_constraintStart_toStartOf="@+id/buttonMultiplicar"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSumar" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonMultiplicar"
         android:layout_width="120dp"
         android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:text="@string/multiplicar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintEnd_toEndOf="@+id/buttonDividir"
+        app:layout_constraintStart_toStartOf="@+id/buttonDividir"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRestar" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/buttonDividir"
         android:layout_width="120dp"
         android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:text="@string/dividir"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMultiplicar" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/desarrollado_por_luis_fuentes"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonDividir"
+        tools:ignore="SmallSp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="95dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/calculator_technology_svgrepo_com" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
