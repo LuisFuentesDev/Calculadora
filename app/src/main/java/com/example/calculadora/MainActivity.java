@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         EditText numero2 = findViewById(R.id.numero2);
 
 
-
         Button sumar = findViewById(R.id.buttonSumar);
         Button restar = findViewById(R.id.buttonRestar);
         Button multiplicar = findViewById(R.id.buttonMultiplicar);
@@ -32,22 +31,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                    String num1 = numero1.getText().toString().trim();
-                    String num2 = numero2.getText().toString().trim();
+                String num1 = numero1.getText().toString().trim();
+                String num2 = numero2.getText().toString().trim();
 
-                    if (num1.isEmpty() || num2.isEmpty()) {
-                        Toast.makeText(getBaseContext(), "Faltan números por ingresar", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-
-                    int n1 = Integer.parseInt(num1);
-                    int n2 = Integer.parseInt(num2);
-
-                    int suma = n1 + n2;
-
-                    Toast.makeText(getBaseContext(), "Resultado: " + suma, Toast.LENGTH_SHORT).show();
+                if (num1.isEmpty() || num2.isEmpty()) {
+                    Toast.makeText(getBaseContext(), "Faltan números por ingresar", Toast.LENGTH_SHORT).show();
+                    return;
                 }
-            });
+
+                int n1 = Integer.parseInt(num1);
+                int n2 = Integer.parseInt(num2);
+
+                int suma = n1 + n2;
+
+                Toast.makeText(getBaseContext(), "Resultado: " + suma, Toast.LENGTH_SHORT).show();
+            }
+        });
 
         // Button restar = findViewById(R.id.buttonRestar);
 
@@ -104,10 +103,10 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                int n1 = Integer.parseInt(num1);
-                int n2 = Integer.parseInt(num2);
+                double n1 = Integer.parseInt(num1);
+                double n2 = Integer.parseInt(num2);
 
-                int division = n1 / n2;
+                double division = n1 / n2;
 
                 Toast.makeText(getBaseContext(), "Resultado: " + division, Toast.LENGTH_SHORT).show();
             }
