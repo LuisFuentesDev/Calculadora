@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.text.BreakIterator;
+import java.text.StringCharacterIterator;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -21,48 +24,92 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button sumar = findViewById(R.id.buttonSumar);
+        Button restar = findViewById(R.id.buttonRestar);
+        Button multiplicar = findViewById(R.id.buttonMultiplicar);
+        Button dividir = findViewById(R.id.buttonDividir);
 
         sumar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String n1 = numero1.getText().toString();
-                String n2 = numero2.getText().toString();
 
-                Toast.makeText(getBaseContext(), "Sumaste " + n1 + " " + n2, Toast.LENGTH_LONG).show();
-            }
-        });
+                    String num1 = numero1.getText().toString().trim();
+                    String num2 = numero2.getText().toString().trim();
 
-        Button restar = findViewById(R.id.buttonRestar);
+                    if (num1.isEmpty() || num2.isEmpty()) {
+                        Toast.makeText(getBaseContext(), "Faltan números por ingresar", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    int n1 = Integer.parseInt(num1);
+                    int n2 = Integer.parseInt(num2);
+
+                    int suma = n1 + n2;
+
+                    Toast.makeText(getBaseContext(), "Resultado: " + suma, Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        // Button restar = findViewById(R.id.buttonRestar);
 
         restar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String n1 = numero1.getText().toString();
-                String n2 = numero2.getText().toString();
+                String num1 = numero1.getText().toString().trim();
+                String num2 = numero2.getText().toString().trim();
 
-                Toast.makeText(getBaseContext(), "Restaste " + n1 + " " + n2, Toast.LENGTH_LONG).show();
+                if (num1.isEmpty() || num2.isEmpty()) {
+                    Toast.makeText(getBaseContext(), "Faltan números por ingresar", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                int n1 = Integer.parseInt(num1);
+                int n2 = Integer.parseInt(num2);
+
+                int resta = n1 - n2;
+
+                Toast.makeText(getBaseContext(), "Resultado: " + resta, Toast.LENGTH_SHORT).show();
             }
         });
 
-        Button multiplicar = findViewById(R.id.buttonMultiplicar);
+        //   Button multiplicar = findViewById(R.id.buttonMultiplicar);
         multiplicar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String n1 = numero1.getText().toString();
-                String n2 = numero2.getText().toString();
+                String num1 = numero1.getText().toString().trim();
+                String num2 = numero2.getText().toString().trim();
 
-                Toast.makeText(getBaseContext(), "Multiplicaste " + n1 + " " + n2, Toast.LENGTH_LONG).show();
+                if (num1.isEmpty() || num2.isEmpty()) {
+                    Toast.makeText(getBaseContext(), "Faltan números por ingresar", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                int n1 = Integer.parseInt(num1);
+                int n2 = Integer.parseInt(num2);
+
+                int multiplicacion = n1 * n2;
+
+                Toast.makeText(getBaseContext(), "Resultado: " + multiplicacion, Toast.LENGTH_SHORT).show();
             }
         });
 
-        Button dividir = findViewById(R.id.buttonDividir);
+        //   Button dividir = findViewById(R.id.buttonDividir);
         dividir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String n1 = numero1.getText().toString();
-                String n2 = numero2.getText().toString();
+                String num1 = numero1.getText().toString().trim();
+                String num2 = numero2.getText().toString().trim();
 
-                Toast.makeText(getBaseContext(), "Dividiste " + n1 + " " + n2, Toast.LENGTH_LONG).show();
+                if (num1.isEmpty() || num2.isEmpty()) {
+                    Toast.makeText(getBaseContext(), "Faltan números por ingresar", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                int n1 = Integer.parseInt(num1);
+                int n2 = Integer.parseInt(num2);
+
+                int division = n1 / n2;
+
+                Toast.makeText(getBaseContext(), "Resultado: " + division, Toast.LENGTH_SHORT).show();
             }
         });
     }
